@@ -1,5 +1,13 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-export default function handler(req, res) {
-  res.status(200).json({ name: 'John Doe' })
+export function fetchItems() {
+  fetch("https://dummyjson.com/products/")
+    .then((response) => {
+      return response.json();
+    })
+    .catch((error) => console.log(error))
+    .then((response) => {
+      return (response.products);
+    })
+    .catch((error) => console.log(error));
 }
