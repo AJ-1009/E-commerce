@@ -13,7 +13,7 @@ const categories = [
 
 export default function Home() {
   const [items, setitems] = useState([]);
-  const [filter, setfilter] = useState("");
+  const [filter, setfilter] = useState("all");
   const [loading, setloading] = useState(true);
   const [filtered, setfiltered] = useState([]);
   const [value, setvalue] = useState("");
@@ -46,7 +46,7 @@ export default function Home() {
       });
     }
     setfiltered(category);
-  }, [filter]);
+  }, [filter,items]);
 
   useEffect(() => {
     if (value != "all") {
