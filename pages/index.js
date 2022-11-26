@@ -61,7 +61,6 @@ export default function Home() {
       });
     }
     setfiltered(category);
-    setfilter();
   }, [value]);
 
   // function ascendingSort() {
