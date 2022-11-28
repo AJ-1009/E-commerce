@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import Card from "../components/common/Card";
+import { fetchusers } from "./api/user";
 const categories = [
   "all",
   "groceries",
@@ -46,7 +47,7 @@ export default function Home() {
       });
     }
     setfiltered(category);
-  }, [filter,items]);
+  }, [filter, items]);
 
   useEffect(() => {
     if (value != "all") {
@@ -63,13 +64,6 @@ export default function Home() {
     setfiltered(category);
   }, [value]);
 
-  // function ascendingSort() {
-  //   setfiltered(
-  //     filtered.sort((a, b) =>
-  //       a.price > b.price ? 1 : b.price > a.price ? -1 : 0
-  //     )
-  //   );
-  // }
   return (
     <div>
       <Head>
